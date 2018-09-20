@@ -1,16 +1,22 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    </head>
-    <body>
-        <h1>Wgraj plik</h1>
-        <form action="/upload" enctype="multipart/form-data" method="post">
-            <label>Tytuł pliku</label>
-            <input type="text" name="title">
-            <br>
-            <label>Plik</label>
-            <input type="file" name="upload" multiple="multiple"><br>
-            <input type="submit" value="Wyślij">
-        </form>
-    </body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Start uploading image.</title>
+    <link rel="stylesheet" href="./css/start.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Upload file jpg/png</h1>
+        </div>
+        <div class="form-div">
+            <form action="/upload" enctype="multipart/form-data" method="post"> 
+                <label></label>
+                <input class="input-1" type="file" name="upload" multiple="multiple"><br>
+                <input class="send" type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+</body>
 </html>
