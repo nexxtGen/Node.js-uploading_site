@@ -32,7 +32,7 @@ exports.upload = function(request, response) {
     
     form.parse(request, function(err, fields, files) { 
         fileName = files.upload.name;       
-        fs.rename(files.upload.path, `${fileName}`, function() {
+        fs.rename(files.upload.path, './images/' + fileName, function() {
             fs.readFile('./templates/show.html', (err, html) => {
                 response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});	
                 response.write(html);
@@ -52,7 +52,7 @@ exports.showStyle = function(request, response) {
 }
 
 exports.show = function(request, response) {
-    fs.readFile(`${fileName}`, "binary", function(error, file) {
+    fs.readFile('./images/' + fileName, "binary", function(error, file) {
         response.writeHead(200, {"Content-Type": "image/png"});
         response.write(file, "binary");
         response.end();
